@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Meta Tags para SEO -->
+    <meta name="description" content="Loja de Artesanato: Produtos feitos à mão, exclusivos e sustentáveis. Visite nossa loja para artesanatos exclusivos e únicos!">
+    <meta name="keywords" content="artesanato, loja de artesanato, produtos feitos à mão, decoração artesanal, presentes artesanais, loja online de artesanato, produtos sustentáveis, artesanato exclusivo">
+    <meta name="author" content="Sua Empresa ou Seu Nome">
+    <!-- Open Graph Meta Tags (para redes sociais) -->
+    <meta property="og:title" content="Loja de Artesanato">
+    <meta property="og:description" content="Loja de Artesanato: Produtos feitos à mão, exclusivos e sustentáveis. Visite nossa loja para artesanatos exclusivos e únicos!">
+    <meta property="og:image" content="URL-da-imagem-de-capa-ou-produto.jpg">
+    <meta property="og:url" content="https://www.sualoja.com">
+    <meta property="og:type" content="website">
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Loja de Artesanato">
+    <meta name="twitter:description" content="Loja de Artesanato: Produtos feitos à mão, exclusivos e sustentáveis. Visite nossa loja para artesanatos exclusivos e únicos!">
+    <meta name="twitter:image" content="URL-da-imagem-de-capa-ou-produto.jpg">
+    <!-- Favicon -->
+    <link rel="icon" href="assets/Pinceis3.webp" type="image/x-icon">
+    <!-- Título da Página -->
+    <title>Loja de Artesanato</title>
+    <!-- Link para o TailwindCSS -->
+     <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-gray-50 text-gray-900">
+
+    <!-- Navbar -->
+    <nav class="bg-blue-600 p-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <div class="text-white text-2xl font-bold">
+                Artesanato
+            </div>
+            <div class="hidden md:flex space-x-8">
+                <a href="#" class="text-white hover:text-yellow-300">Home</a>
+                <a href="#produtos" class="text-white hover:text-yellow-300">Produtos</a>
+                <a href="#sobre" class="text-white hover:text-yellow-300">Sobre</a>
+                <a href="#localizacao" class="text-white hover:text-yellow-300">Localização</a>
+                <a href="#contato" class="text-white hover:text-yellow-300">Contato</a>
+            </div>
+            <div class="md:hidden flex items-center">
+                <button id="menu-toggle" class="text-white">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="h-6 w-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="md:hidden hidden">
+        <div class="flex flex-col items-center space-y-4 p-4 bg-blue-600">
+            <a href="#" class="text-white">Home</a>
+            <a href="#produtos" class="text-white">Produtos</a>
+            <a href="#sobre" class="text-white">Sobre</a>
+            <a href="#localizacao" class="text-white">Localização</a>
+            <a href="#contato" class="text-white">Contato</a>
+        </div>
+    </div>
+
+    <!-- Hero Section com vídeo de fundo -->
+    <section class="relative w-full h-screen overflow-hidden">
+        <video class="absolute top-0 left-0 w-full h-full object-cover" autoplay muted loop>
+            <source src="assets/Video.mp4" type="video/mp4">
+            Seu navegador não suporta vídeo.
+        </video>
+        
+        <!-- Sobreposição escura para o texto ficar visível -->
+        <div class="absolute top-0 left-0 w-full h-full bg-black opacity-50"></div>
+
+          <!-- Hero Content -->
+          <header class="relative z-10 bg-gradient-to-r from-blue-600 to-green-70 text-white text-center p-16">
+            <h1 class="text-4xl font-bold">Bem-vindo à nossa Loja de Artesanato</h1>
+            <p class="mt-4 text-lg">Produtos únicos feitos com amor e dedicação</p>
+        </header>
+    </section>
+          
+    <section id="produtos" class="py-16">
+        <div class="container mx-auto text-center">
+            <h2 class="text-3xl font-bold mb-8">Nossos Produtos</h2>
+    
+            <!-- Barra de pesquisa -->
+            <div class="mb-8">
+                <input type="text" id="search" placeholder="Pesquise produtos..." class="w-1/2 p-2 border border-gray-300 rounded-md" onkeyup="filterProducts()">
+            </div>
+    
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8" id="products-list">
+                <!-- Produto 1 -->
+                <div class="bg-white p-6 shadow-lg rounded-lg product-item">
+                    <img src="assets/Pinceis3.webp" alt="Produto 1" class="w-full h-48 object-cover rounded-md">
+                    <h3 class="text-xl font-semibold mt-4">A</h3>
+                    <p class="text-gray-700 mt-2">Feito à mão com materiais sustentáveis.</p>
+                    <div class="flex justify-center mt-4">
+                        <span class="material-icons text-yellow-500">star</span>
+                        <span class="material-icons text-yellow-500">star</span>
+                        <span class="material-icons text-yellow-500">star</span>
+                        <span class="material-icons text-yellow-500">star</span>
+                        <span class="material-icons text-gray-400">star</span>
+                    </div>
+                    <div class="mt-4 text-gray-600">
+                        <p>"Produto excelente! Chegou rápido e em perfeito estado." - Carla</p>
+                        <p>"Adorei, muito bem feito e lindo!" - Ricardo</p>
+                    </div>
+                </div>
+    
+                <!-- Produto 2 -->
+                <div class="bg-white p-6 shadow-lg rounded-lg product-item">
+                    <img src="assets/Pinceis.webp" alt="Produto 2" class="w-full h-48 object-cover rounded-md">
+                    <h3 class="text-xl font-semibold mt-4">B</h3>
+                    <p class="text-gray-700 mt-2">Feito à mão com materiais sustentáveis.</p>
+                    <div class="flex justify-center mt-4">
+                        <span class="material-icons text-yellow-500">star</span>
+                        <span class="material-icons text-yellow-500">star</span>
+                        <span class="material-icons text-yellow-500">star</span>
+                        <span class="material-icons text-yellow-500">star</span>
+                        <span class="material-icons text-gray-400">star</span>
+                    </div>
+                    
+                    <div class="mt-4 text-gray-600">
+                        <p>"Amei este produto, muito bem feito!" - Maria</p>
+                        <p>"Muito bonito e bem acabado." - João</p>
+                    </div>
+                </div>
+    
+                <!-- Produto 3 -->
+                <div class="bg-white p-6 shadow-lg rounded-lg product-item">
+                    <img src="assets/Pinceis3.webp" alt="Produto 3" class="w-full h-48 object-cover rounded-md">
+                    <h3 class="text-xl font-semibold mt-4">C</h3>
+                    <p class="text-gray-700 mt-2">Feito à mão com materiais sustentáveis.</p>
+                    <div class="flex justify-center mt-4">
+                        <span class="material-icons text-yellow-500">star</span>
+                        <span class="material-icons text-yellow-500">star</span>
+                        <span class="material-icons text-yellow-500">star</span>
+                        <span class="material-icons text-yellow-500">star</span>
+                        <span class="material-icons text-gray-400">star</span>
+                    </div>
+                    <button id="whatsapp-button" class="mt-4 px-4 py-2 bg-blue-600 text-white rounded-md transition-transform duration-200 ease-in-out transform hover:scale-105">
+                        Compre conosco via WhatsApp
+                    </button>                  
+                    <div class="mt-4 text-gray-600">
+                        <p>"Produto excelente! Chegou rápido e em perfeito estado." - Carla</p>
+                        <p>"Adorei, muito bem feito e lindo!" - Ricardo</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sobre Section -->
+    <section id="sobre" class="bg-gray-100 py-16">
+        <div class="container mx-auto text-center">
+            <h2 class="text-3xl font-bold mb-8">Sobre nós</h2>
+            <p class="text-lg">A nossa loja de artesanato é especializada em produtos feitos à mão, com foco em qualidade e sustentabilidade. Cada peça é única e feita com muito carinho e dedicação.</p>
+        </div>
+    </section>
+
+    <!-- Localização Section -->
+    <section id="localizacao" class="py-16">
+        <div class="container mx-auto text-center">
+            <h2 class="text-3xl font-bold mb-8">Nossa Localização</h2>
+            <div class="w-full h-96 mb-8">
+                <!-- Substitua o src do iframe com seu link do Google Maps -->
+                <iframe class="w-full h-full" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3656.908542859004!2d-46.60037604821203!3d-23.55051962684754!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce59ac1cfed37f%3A0x1f0cb74b185f8d5b!2sAv.%20Paulista%2C%20São%20Paulo%2C%20SP%2C%20Brasil!5e0!3m2!1spt-BR!2sus!4v1602240478389!5m2!1spt-BR!2sus" frameborder="0" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+            </div>
+            <p class="text-lg">Endereço: Avenida Paulista, São Paulo, SP, Brasil</p>
+        </div>
+    </section>
+
+    <!-- Contato Section -->
+<section id="contato" class="py-16">
+    <div class="container mx-auto text-center">
+        <h2 class="text-3xl font-bold mb-8">Entre em contato</h2>
+        <p class="text-lg mb-4">Se você tiver alguma dúvida, entre em contato conosco através das informações abaixo:</p>
+        
+        <div class="mb-8">
+            <h3 class="text-xl font-semibold">Telefone</h3>
+            <p class="text-gray-700">+55 11 99999-9999</p>
+        </div>
+
+        <div class="mb-8">
+            <h3 class="text-xl font-semibold">E-mail</h3>
+            <p class="text-gray-700">contato@empresa.com</p>
+        </div>
+
+        <div class="mb-8">
+            <h3 class="text-xl font-semibold">Endereço</h3>
+            <p class="text-gray-700">Rua Exemplo, 123, Cidade, Estado</p>
+        </div>
+
+        <p class="text-lg">Estamos à disposição para atender a sua solicitação!</p>
+    </div>
+</section>
+
+
+    <!-- Footer -->
+    <footer class="bg-blue-600 text-white text-center py-6">
+        <p>&copy; 2024 Artesanato | Todos os direitos reservados</p>
+    </footer>
+
+    <script>
+        // Função para alternar a visibilidade do menu móvel
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden'); // Alterna entre visível e escondido
+        });
+    
+        // Função de filtro de produtos (pode ser usada para filtrar com base na pesquisa)
+        function filterProducts() {
+            const searchQuery = document.getElementById('search').value.toLowerCase();
+            const products = document.querySelectorAll('.product-item');
+            
+            products.forEach(product => {
+                const productName = product.querySelector('h3').textContent.toLowerCase();
+                if (productName.includes(searchQuery)) {
+                    product.style.display = 'block';
+                } else {
+                    product.style.display = 'none';
+                }
+            });
+        }
+    </script>    
+</body>
+</html>
+</html> 
